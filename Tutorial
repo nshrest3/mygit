@@ -157,6 +157,18 @@ Now  i can see Tutorial file online too.
 
 i will again edit this tutorial file save it, add to staging, commit and push it.
 
+while pushing it gives a bogus and irritating messages, we make it simple by 
+# git config --global push.default simple
+
+Now it looks more cleaner.
+
+$ git push mygit_origin
+Username for 'https://github.com': sthaniraj
+Password for 'https://sthaniraj@github.com':
+Everything up-to-date
+
+
+
 
 
 
