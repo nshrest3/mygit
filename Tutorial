@@ -167,6 +167,17 @@ Username for 'https://github.com': sthaniraj
 Password for 'https://sthaniraj@github.com':
 Everything up-to-date
 
+Create, merge, switch push and delete the brancehs:
+
+# git branch  --- see wt are the brances and where we are now
+# git checkout -b <branch name>
+# git push origin <branch name>
+# git branch master
+# git merge <branch>
+# git branch -d <branch>
+# git push origin :<branch>
+
+
 
 
 
