@@ -1,0 +1,166 @@
+download git for windows
+download sublime text editor
+install git with default settings.
+
+configure git 
+
+# git config --global user.name "sthaniraj"
+# git config --global user.email "stha.niraj@gmail.com"
+
+# git config --list  <see settings>
+
+Signup an account on github.com with same email id and name
+- Create a repo called mygit
+- Copy the URL for mygit.
+
+- open git bash
+- go to the directory where u need to have all the repo to be in local system 
+
+- now we gonna clone the repo we just made on github to local machine.
+# git clone <URL>
+# git clone https://github.com/sthaniraj/mygit.git
+
+$ git clone https://github.com/sthaniraj/mygit.git
+Cloning into 'mygit'...
+warning: You appear to have cloned an empty repository.
+Checking connectivity... done.
+
+
+now u see the folder is created as mygit in the current dir.
+
+now goto mygit folder to see if its created. yes it did.
+to see which remote this repo is associated with :
+# git remote
+# git remote -v 
+
+$ git remote -v
+origin  https://github.com/sthaniraj/mygit.git (fetch)
+origin  https://github.com/sthaniraj/mygit.git (push)
+
+the origin is just a name for the online repo ( we can change this to our simplicity)
+here i will make it as mygit_origin.
+
+$ git remote rename origin mygit_origin
+
+$ git remote -v
+mygit_origin    https://github.com/sthaniraj/mygit.git (fetch)
+mygit_origin    https://github.com/sthaniraj/mygit.git (push)
+
+
+i went to mygit repo online and added readme.md and commited the change.
+i will now pull those new changes done online to my local machine.
+
+# git pull mygit_origin
+$ git pull mygit_origin
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/sthaniraj/mygit
+ * [new branch]      master     -> mygit_origin/master
+
+Now i see readme.md file exists in my local machine.
+$ ls -la
+total 37
+drwxr-xr-x 1 NShrest3 GSM1900+Group(513)   0 Sep  6 12:17 ./
+drwxr-xr-x 1 NShrest3 GSM1900+Group(513)   0 Sep  6 12:02 ../
+drwxr-xr-x 1 NShrest3 GSM1900+Group(513)   0 Sep  6 12:17 .git/
+-rw-r--r-- 1 NShrest3 GSM1900+Group(513) 163 Sep  6 12:17 README.md
+
+
+Now i add a tutorial file which will track all the practices i do for this git project 
+
+i added it 
+
+$ ls -la
+total 37
+drwxr-xr-x 1 NShrest3 GSM1900+Group(513)   0 Sep  6 12:18 ./
+drwxr-xr-x 1 NShrest3 GSM1900+Group(513)   0 Sep  6 12:02 ../
+drwxr-xr-x 1 NShrest3 GSM1900+Group(513)   0 Sep  6 12:20 .git/
+-rw-r--r-- 1 NShrest3 GSM1900+Group(513) 163 Sep  6 12:17 README.md
+-rw-r--r-- 1 NShrest3 GSM1900+Group(513)   0 Sep  6 12:18 Tutorial
+
+checking status now
+$ git status
+On branch master
+Your branch is up-to-date with 'mygit_origin/master'.
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        Tutorial
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+it says not being tracked. i will stage it (will be tracked.)
+
+# git add .
+
+$ git status
+On branch master
+Your branch is up-to-date with 'mygit_origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   Tutorial
+
+looks good now .. i will then commit the change. 
+# git commit -m 'Added tutorial file'
+
+$ git commit -m 'Added tuorial file'
+[master 1cf7dea] Added tuorial file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 Tutorial
+
+$ git status
+On branch master
+Your branch is ahead of 'mygit_origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+nothing to commit, working directory clean
+
+
+I will upload this change to mygit repo online. 
+# git push mygit_origin
+
+$ git push mygit_origin
+warning: push.default is unset; its implicit value has changed in
+Git 2.0 from 'matching' to 'simple'. To squelch this message
+and maintain the traditional behavior, use:
+
+  git config --global push.default matching
+
+To squelch this message and adopt the new behavior now, use:
+
+  git config --global push.default simple
+
+When push.default is set to 'matching', git will push local branches
+to the remote branches that already exist with the same name.
+
+Since Git 2.0, Git defaults to the more conservative 'simple'
+behavior, which only pushes the current branch to the corresponding
+remote branch that 'git pull' uses to update the current branch.
+
+See 'git help config' and search for 'push.default' for further information.
+(the 'simple' mode was introduced in Git 1.7.11. Use the similar mode
+'current' instead of 'simple' if you sometimes use older versions of Git)
+
+Username for 'https://github.com': sthaniraj
+Password for 'https://sthaniraj@github.com':
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 277 bytes | 0 bytes/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/sthaniraj/mygit.git
+   e60cd2e..1cf7dea  master -> master
+
+Now  i can see Tutorial file online too.
+
+i will again edit this tutorial file save it, add to staging, commit and push it.
+
+
+
+
+
+
+
+
